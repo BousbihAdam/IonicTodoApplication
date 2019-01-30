@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Saisie de l'évenement</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+
+    <ion-item>
+        <ion-label>Titre</ion-label>
+        <ion-input type="text" required [(ngModel)]="event.title" name="title" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Description</ion-label>
+        <ion-textarea [(ngModel)]="event.description" name="description"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Date</ion-label>
+    </ion-item>
+      
+    <ion-item>
+        <ion-label>Heure</ion-label>
+        <ion-datetime displayFormat="H:mm " pickerFormat="H mm A" [(ngModel)]="event.heure" name="heure"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Jour</ion-label>
+        <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="event.jour" name="jour"></ion-datetime>
+    </ion-item>
+
+
+    
+    <ion-item>
+      <ion-label>Type</ion-label>
+      <ion-select [(ngModel)]="event.type" name="type">
+        <ion-select-option value="anniversaire">Anniversaire</ion-select-option>
+        <ion-select-option value="travail">Travail</ion-select-option>
+        <ion-select-option value="rdv">Rendez-vous</ion-select-option>
+        <ion-select-option value="courses">Courses</ion-select-option>
+        <ion-select-option value="rappel">Rappel</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label floating>Image</ion-label>
+      <ion-input type="file" [id]="image"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Recevoir notification</ion-label>
+      <ion-toggle checked="false" [(ngModel)]="event.notif" name="notif"></ion-toggle>
+    </ion-item>
+
+    
+
+    
+
+    <form (ngSubmit)="newEventForm()">
+    <button ion-button type="submit" block >Add Event</button>
+  </form>
+   
+ 
+  <button ion-button color="danger" (click)="takePhoto(event)">Phoyoo</button>
+</ion-content>

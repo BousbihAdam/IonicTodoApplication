@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+ 
+    <ion-list>
+ 
+        <ion-item-sliding  #item *ngFor="let event of events" >
+           
+             <ion-item (click)="onClkEvent(event)" >
+                <ion-avatar item-start>
+                    <img src="{{event.image}}" >
+      
+                 </ion-avatar>
+                {{ event.title}} 
+                <p>{{ event.description}} </p>
+                <p outline item-end> {{ event.jour }} {{ event.heure}}</p>
+             </ion-item>
+             
+           
+      
+            <ion-item-options side="end">
+                <button ion-button color="danger" (click)="onDelete(event)">Supprimer</button>
+              </ion-item-options>
+        
+          </ion-item-sliding>
+       
+        </ion-list>
+      
+       
+      
+        
+        <ion-fab horizontal="center" vertical="bottom" slot="fixed" class="fab-horizontal-end fab-vertical-bottom hydrated">
+            <ion-fab-button (click)="newEvent()" color="danger" class="ion-color ion-color-danger ion-activatable hydrated">
+              <ion-icon name="add" role="img" class="hydrated" aria-label="add"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+      
+</ion-content>

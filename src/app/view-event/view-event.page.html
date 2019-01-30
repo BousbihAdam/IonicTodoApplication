@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Evenement</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  
+    <ion-card>
+        <ion-card-header>
+          <ion-card-title> {{ event.title }}</ion-card-title>
+        </ion-card-header>
+    
+        <ion-card-content>
+          Description: {{ event.description }}  <br/>
+          Date: {{ event.jour }}à {{ event.heure }} <br/>
+          Catégorie: {{ event.type }}  <br/>
+          Notif: {{ event.notif }}   <br/>
+     
+        </ion-card-content>
+      </ion-card>
+
+</ion-content>
